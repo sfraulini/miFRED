@@ -49,16 +49,16 @@ Below are different command examples depending on the inputs provided by the use
 
 - For complete input generation, i.e. user provides only the FASTA files folder and metagenomic reads:
 
-```python3 miFRED_core.py -g GENOMES_FOLDER -r READS_FOLDER -u {True,False} -A eggnog_annotation -o output_folder```
+   ```python3 miFRED_core.py -g GENOMES_FOLDER -r READS_FOLDER -u {True,False} -A eggnog_annotation -o output_folder```
 
 - If alignment of metagenomics reads against the provided genomes was already performed by the user:
 
-```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder```
+   ```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder```
 
 - To compute FRED from KO for comparison analysis::
 
-```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder --KO```
+   ```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder --KO```
 
 - For help type the following or look at the Manual:
 
-```python3 miFRED_core.py --help```
+   ```python3 miFRED_core.py --help```
