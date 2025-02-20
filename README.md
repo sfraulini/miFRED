@@ -45,25 +45,20 @@ Outputs include several files storing the calculated FRED metrics, summary stati
 miFRED requires a Linux system and at least 6 CPUs due to the computational demands of the MICROPHERRET training process.
 
 ## **Usage**
-Different commands according to which inputs are already provided by the users. Some examples are following.
+Below are different command examples depending on the inputs provided by the user. The fewer inputs the user provides, the more miFRED will generate automatically.
 
-Possible command line to lunch miFRED with complete input generation (user provide only fasta files folder and metagenomics reads) is the following:
+- For complete input generation, i.e. user provides only the FASTA files folder and metagenomic reads:
 
 ```python3 miFRED_core.py -g GENOMES_FOLDER -r READS_FOLDER -u {True,False} -A eggnog_annotation -o output_folder```
 
-If alignment was already performed by the user:
+- If alignment of metagenomics reads against the provided genomes was already performed by the user:
 
 ```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder```
 
-miFRED can also compute FRED from KO for comparison analysis:
+- To compute FRED from KO for comparison analysis::
 
 ```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder --KO```
 
-For help type the following or look at the Manual:
+- For help type the following or look at the Manual:
 
 ```python3 miFRED_core.py --help```
-## **Inputs**
-
-Additional metrics like alpha diversity (Gini-Simpson index, GSI), a non-normalised version of FREDc [19] (FREDc_tian) and Rao’s entropy for functional diversity are also calculated [47]. Several parameters can be set to control the calculation, including the minimum fraction of genome with coverage higher than 0 (breadth of coverage) and the minimum relative abundance required to consider a genome as present in a sample; both these parameters are aimed at excluding spurious associations.
-
-Users can define specific phenotypes to be included in the calculation, or by default the 86 phenotypes from high-performance models are considered. Annotation files are processed to extract KEGG Orthologs (KO), used by the models for the predictions.
