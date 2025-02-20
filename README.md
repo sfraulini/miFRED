@@ -1,9 +1,9 @@
 # miFRED
 **Microbial phenotype-based functional redundancy calculator from metagenomics data**: community-level functional redundancy (FREDc) and redundancy of 86 metabolic and ecological phenotypes (FREDs)
 
+## **Overview**
 miFRED is a fast, user-friendly pipeline to calculate functional redundancy (FRED) using as functional units 86 phenotypes predicted by MICROPHERRET machine learning models from KEGG orthologs (KO). 
 
-## **Overview**
 The pipeline processes metagenomic samples by taking as input:
 - metagenomic reads from each sample
 - individual fasta files representative of each genome in the samples.
