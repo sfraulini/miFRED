@@ -71,7 +71,7 @@ Below are different command examples depending on the inputs provided by the use
 Users can define specific phenotypes to be included in the calculation, or by default the 86 phenotypes from high-performance models are considered. Annotation files are processed to extract KEGG Orthologs (KO), used by the models for the predictions.
 ????????
 
-### ** Outputs**
+### **Outputs**
 The following folders are generated in the output folder specified by the user.
 
 #### input_fred folder
