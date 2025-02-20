@@ -62,3 +62,42 @@ Below are different command examples depending on the inputs provided by the use
 - For help type the following or look at the Manual:
 
    ```python3 miFRED_core.py --help```
+
+## **Manual**
+### **Inputs**
+??????
+- Several parameters can be set to control the calculation, including the minimum fraction of genome with coverage higher than 0 (breadth of coverage) and the minimum relative abundance required to consider a genome as present in a sample; both these parameters are aimed at excluding spurious associations.
+
+Users can define specific phenotypes to be included in the calculation, or by default the 86 phenotypes from high-performance models are considered. Annotation files are processed to extract KEGG Orthologs (KO), used by the models for the predictions.
+????????
+
+### ** Outputs**
+The following folders are generated in the output folder specified by the user.
+
+#### input_fred folder
+It stores the results of miFRED's input generation step procedure. The list can change depending on which files were already provided by the user.
+- all_genomes.fa: fasta file obtained by concatenating the files provided by the user. It is the reference used in the alignment procedure
+- info.txt: ?
+- nreads.txt: ?
+- bowtie2 folder: sorted and indexed bam files obtained by aligning reads against all_genomes.fa with bowtie2 and processing resulting files with Samtools
+- eggnog_annotations folder: contains eggNOG-mapper results
+- annotation_matrix.csv: ?
+- KO_for_calculation.csv: ?
+  
+#### output_micropherret folder
+If MCROPHERRET models are used, it stores the results of the ML predictions:
+- predict_functions.csv: matrix with predicted functions per genome
+- predict_sum.csv: number of genomes predicted to perform each function
+- 
+#### output_fred folder
+It stores results of FRED calculation procedure:
+- fredc.csv file: store results of FREDc calculation for each analysed sample. Additional metrics like alpha diversity (Gini-Simpson index, GSI), a non-normalised version of FREDc(FREDc_tian) and Rao’s entropy for functional diversity are included too.
+- freds.csv: store results of FREDs calculation for each function for each analysed sample
+- FREDs_statistic.csv: FREDs statistics for each analysed function and sample
+
+Intermediate results are also provided:
+- jaccard_distances.csv: storing the pairwise functional diversity within each genome pair
+- used_relative_abundances.csv: relative abundances computed by miFRED and used for FRED calculation
+- normalised_relative_abundances.csv: relative abundances computed by miFRED, normalised by the number of mapped reads
+
+FREDc and FREDs distribution plot are provided too to aid the analysis. 
