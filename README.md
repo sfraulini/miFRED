@@ -41,7 +41,28 @@ Outputs include several files storing the calculated FRED metrics, summary stati
 
      ```conda env create -f miFRED_env.yml```
 
-   
+## **Requirements**
+miFRED requires a Linux system and at least 6 CPUs due to the computational demands of the MICROPHERRET training process.
+
+##**Usage**
+Different commands according to which inputs are already provided by the users. Some examples are following.
+
+Possible command line to lunch miFRED with complete input generation (user provide only fasta files folder and metagenomics reads) is the following:
+
+```python3 miFRED_core.py -g GENOMES_FOLDER -r READS_FOLDER -u {True,False} -A eggnog_annotation -o output_folder```
+
+If alignment was already performed by the user:
+
+```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder```
+
+miFRED can also compute FRED from KO for comparison analysis:
+
+```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder --KO```
+
+For help type the following or look at the Manual:
+
+```python3 miFRED_core.py --help```
+## **Inputs**
 
 Additional metrics like alpha diversity (Gini-Simpson index, GSI), a non-normalised version of FREDc [19] (FREDc_tian) and Rao’s entropy for functional diversity are also calculated [47]. Several parameters can be set to control the calculation, including the minimum fraction of genome with coverage higher than 0 (breadth of coverage) and the minimum relative abundance required to consider a genome as present in a sample; both these parameters are aimed at excluding spurious associations.
 
