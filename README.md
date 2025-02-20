@@ -88,7 +88,7 @@ It stores the results of miFRED's input generation step procedure. The list can 
 If MCROPHERRET models are used, it stores the results of the ML predictions:
 - predict_functions.csv: matrix with predicted functions per genome
 - predict_sum.csv: number of genomes predicted to perform each function
-- 
+  
 #### output_fred folder
 It stores results of FRED calculation procedure:
 - fredc.csv file: store results of FREDc calculation for each analysed sample. Additional metrics like alpha diversity (Gini-Simpson index, GSI), a non-normalised version of FREDc(FREDc_tian) and Rao’s entropy for functional diversity are included too.
