@@ -3,7 +3,7 @@
 
 miFRED is a fast, user-friendly pipeline to calculate functional redundancy (FRED) using as functional units 86 phenotypes predicted by MICROPHERRET machine learning models from KEGG orthologs (KO). 
 
-**Overview**
+## **Overview**
 The pipeline processes metagenomic samples by taking as input:
 - metagenomic reads from each sample
 - individual fasta files representative of each genome in the samples.
@@ -15,14 +15,14 @@ miFRED can automatically generate any missing input file using built-in software
 - sorted bam files generation with Samtools.
 eggNOG-mapper annotation and alignment files can be provided directly as input. 
 
-The core process employs MICROPHERRET function-specific ML models for phenotype prediction and calculates FRED.  For the acetoclastic methanogenesis phenotype, the refined version of the model previously provided by the authors was used. The obtained functional profiles are then scanned to generate a Jaccard distance matrix, representing the functional overlap within genome pairs. By default, the Jaccard distance between genomes without associated functions is set to 1. 
+The core process uses MICROPHERRET function-specific ML models for phenotype prediction and calculates FRED.  For the acetoclastic methanogenesis phenotype, the refined version of the model previously provided by the authors was used. The obtained functional profiles are scanned to generate a Jaccard distance matrix, representing the functional overlap within genome pairs. By default, the Jaccard distance between genomes without associated functions is set to 1. 
 Alignment results are processed to calculate relative abundances, which, along with the Jaccard distance matrix and predicted functional profiles, are used to compute FREDc and FREDs metrics. 
 
 miFRED calculates the following metrics:
-- FREDc, based on Ricotta *et al.*
-- FREDs "number": number of genomes performing each function in each sample
-- FREDs "proportion": the fraction of community carrying out each function
-- FREDs "relative abundance sum": total relative abundance of these genomes
+- **FREDc**, based on Ricotta *et al.*
+- **FREDs "number"**: number of genomes performing each function in each sample
+- **FREDs "proportion"**: the fraction of community carrying out each function
+- **FREDs "relative abundance sum"**: total relative abundance of these genomes
 
 Outputs include several files storing the calculated FRED metrics, summary statistics and distribution plots. Intermediate results are also provided, including MICROPHERRET functional predictions, Jaccard distances between organisms and relative abundance values.
 
