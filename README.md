@@ -4,12 +4,12 @@ Microbial functional redundancy calculator from metagenomics data: community-lev
 ## **Installation**
 1. Download the miFRED folder from this repository:
    
-  ```git clone https://github.com/sfraulini/miFRED/```
+     ```git clone https://github.com/sfraulini/miFRED/```
   
 3. Download MICROPHERRET folder from github and move it inside miFRED folder:
    
-  ```git clone https://github.com/BizzoTL/MICROPHERRET/```
+     ```git clone https://github.com/BizzoTL/MICROPHERRET/```
   
 5. miFRED requires an apposite conda environment, which can be generated as follow using the miFRED.yml file stored in the downloaded folder:
 
-  ```conda env create -f miFRED_env.yml```
+     ```conda env create -f miFRED_env.yml```
