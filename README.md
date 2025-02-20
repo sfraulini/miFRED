@@ -44,7 +44,7 @@ Outputs include several files storing the calculated FRED metrics, summary stati
 ## **Requirements**
 miFRED requires a Linux system and at least 6 CPUs due to the computational demands of the MICROPHERRET training process.
 
-##**Usage**
+## **Usage**
 Different commands according to which inputs are already provided by the users. Some examples are following.
 
 Possible command line to lunch miFRED with complete input generation (user provide only fasta files folder and metagenomics reads) is the following:
