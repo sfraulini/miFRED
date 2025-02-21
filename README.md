@@ -65,7 +65,54 @@ Below are different command examples depending on the inputs provided by the use
 
 ## **Manual**
 ### **Inputs**
-??????
+
+-g GENOMES_FOLDER, --genomes_folder GENOMES_FOLDER
+                        Directory where genomes fastq files are stored
+  --all_genomes ALL_GENOMES
+                        Multifasta file obtained concatenating all single fastq files
+  --binning_file BINNING_FILE
+                        .txt file with each line listing a scaffold and the corresponding genome/bin
+                        name, tab-seperated
+  -r READS_FOLDER, --reads_folder READS_FOLDER
+                        Directory where metagenomic reads fastq files are stored
+  -B BAM_FILES, --bam_files BAM_FILES
+                        Directory where sample-specific sorted.bam files and indexes are stored
+  -u {True,False}, --unpaired_reads {True,False}
+                        True if fasta file for unpaired reads are also provided in reads_folder, False
+                        otherwise (default : True)
+  -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
+                        Output directory
+  -x GENOMES_EXTENSION, --genomes_extension GENOMES_EXTENSION
+                        Genome files extension
+  -p PROCESSORS, --processors PROCESSORS
+                        threads (default: 5)
+  -A EGGNOG_ANNOTATION, --eggnog_annotation EGGNOG_ANNOTATION
+                        Directory where genomes eggNOG .annotations files are stored. .csv file obtained
+                        from parsing .annotations files can be directly provided, with genomes as rows,
+                        KO as columns and KO counts as values. First column must be named "Genomes
+  -db EGGNOG_DATABASE, --eggnog_database EGGNOG_DATABASE
+                        Directory where eggNOG-mapper database is stored
+  -sm {default,fast,mid-sensitive,sensitive,more-sensitive,very-sensitive,ultra-sensitive}, --eggnog-sensmode {default,fast,mid-sensitive,sensitive,more-sensitive,very-sensitive,ultra-sensitive}
+                        eggNOG-mapper Diamond search option: either default, fast, mid-sensitive,
+                        sensitive, more-sensitive, very-sensitive or ultra-sensitive. (default:
+                        sensitive)
+  -f FUNCTIONS_LIST, --functions_list FUNCTIONS_LIST
+                        .txt file containing MICROPHERRET functions to be considered for the
+                        calculation, one per line. (default: 86 functions whose models were accurate on
+                        test set, stored in functions.txt)
+  -s TRAINING_SETS, --training_sets TRAINING_SETS
+                        Folder containing the dataset.csv and dataset_acetoclastic_methanogenesis.csv
+                        files to be used in the training. (default: ./training_sets/ )
+  -c COVERED_GENOME_FRACTION, --covered_genome_fraction COVERED_GENOME_FRACTION
+                        Genomes with a fraction of covered bases lower than this are reported as having
+                        zero coverage. (default: 0.10)
+  -t RELATIVE_ABUNDANCE_THRESHOLD, --relative_abundance_threshold RELATIVE_ABUNDANCE_THRESHOLD
+                        Mininum relative abundance threshold to be considered as present in the sample.
+                        (default: 0)
+  -m MICROPHERRET_PREDICTIONS, --micropherret_predictions MICROPHERRET_PREDICTIONS
+                        csv file containing MICROPHERRET predictions for all the genomes, the first
+                        column with genomes names must be unnamed.
+  -k, --KO              perform calcalution based on KO
 - Several parameters can be set to control the calculation, including the minimum fraction of genome with coverage higher than 0 (breadth of coverage) and the minimum relative abundance required to consider a genome as present in a sample; both these parameters are aimed at excluding spurious associations.
 
 Users can define specific phenotypes to be included in the calculation, or by default the 86 phenotypes from high-performance models are considered. Annotation files are processed to extract KEGG Orthologs (KO), used by the models for the predictions.
@@ -76,18 +123,19 @@ The following folders are generated in the output folder specified by the user.
 
 #### input_fred folder
 It stores the results of miFRED's input generation step procedure. The list can change depending on which files were already provided by the user.
-- all_genomes.fa: fasta file obtained by concatenating the files provided by the user. It is the reference used in the alignment procedure
-- info.txt: ?
-- nreads.txt: ?
-- bowtie2 folder: sorted and indexed bam files obtained by aligning reads against all_genomes.fa with bowtie2 and processing resulting files with Samtools
-- eggnog_annotations folder: contains eggNOG-mapper results
-- annotation_matrix.csv: ?
-- KO_for_calculation.csv: ?
+- all_genomes.fa: fasta file obtained by concatenating the files provided by the user. It is the reference used in the alignment procedure. Generated if ```-g GENOMES_FOLDER, --genomes_folder GENOMES_FOLDER``` is specified
+- info.txt: .txt file with each line listing a scaffold and the corresponding genome/bin name, tab-separated. Generated if ```-g GENOMES_FOLDER, --genomes_folder GENOMES_FOLDER``` is specified 
+- nreads.txt: .txt file with number of reads mapped to each sample, used for relative abundance normalisation
+- bowtie2 folder: sorted and indexed bam files obtained by aligning reads against all_genomes.fa with bowtie2 and processing resulting files with Samtools. Generated if ```-r READS_FOLDER```is specified
+- eggnog_annotations folder: contains eggNOG-mapper results. Generated if ```-A EGGNOG_ANNOTATION, --eggnog_annotation EGGNOG_ANNOTATION``` is not specified
+- annotation_matrix.csv: matrix with the genetic information (KO copy number) per genome, with genomes as rows and KO as columns; input required for prediction of phenotypes. Generated if .csv file is not already provided with ```-A EGGNOG_ANNOTATION, --eggnog_annotation EGGNOG_ANNOTATION```
+- KO_for_calculation.csv: matrix used to calculate FRED if ```-k, --KO``` parameter is specified, with genomes as rows, KO as columns and 0/1 values to indicate presence/absence 
   
 #### output_micropherret folder
 If MCROPHERRET models are used, it stores the results of the ML predictions:
 - predict_functions.csv: matrix with predicted functions per genome
 - predict_sum.csv: number of genomes predicted to perform each function
+They are generated only if ```-k, --KO``` and  ```-m MICROPHERRET_PREDICTIONS, --micropherret_predictions MICROPHERRET_PREDICTIONS``` are not specified
   
 #### output_fred folder
 It stores results of FRED calculation procedure:
