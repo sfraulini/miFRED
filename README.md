@@ -112,7 +112,7 @@ Parameters set to control calculation, aiming at excluding spurious associations
 > Minimum relative abundance required to consider a genome as present in a sample (default: 0)
 
 #### General inputs
--```-o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER```
+- ```-o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER```
 > Output directory
 - ```-p PROCESSORS, --processors PROCESSORS```
 > Number of threads (default: 5)
