@@ -124,26 +124,26 @@ The following folders are generated in the output folder specified by the user.
 #### input_fred folder
 It stores the results of miFRED's input generation step procedure. The list can change depending on which files were already provided by the user.
 - all_genomes.fa
-     fasta file obtained by concatenating the files provided by the user. It is the reference used in the alignment procedure. Generated if ```-g GENOMES_FOLDER, --genomes_folder GENOMES_FOLDER``` is specified
+> fasta file obtained by concatenating the files provided by the user. It is the reference used in the alignment procedure. Generated if ```-g GENOMES_FOLDER, --genomes_folder GENOMES_FOLDER``` is specified
 - info.txt
-     .txt file with each line listing a scaffold and the corresponding genome/bin name, tab-separated. Generated if ```-g GENOMES_FOLDER, --genomes_folder GENOMES_FOLDER``` is specified 
+> .txt file with each line listing a scaffold and the corresponding genome/bin name, tab-separated. Generated if ```-g GENOMES_FOLDER, --genomes_folder GENOMES_FOLDER``` is specified 
 - nreads.txt
-     .txt file with number of reads mapped to each sample, used for relative abundance normalisation
+> .txt file with number of reads mapped to each sample, used for relative abundance normalisation
 - bowtie2 folder
-     sorted and indexed bam files obtained by aligning reads against all_genomes.fa with bowtie2 and processing resulting files with Samtools. Generated if ```-r READS_FOLDER```is specified
+> sorted and indexed bam files obtained by aligning reads against all_genomes.fa with bowtie2 and processing resulting files with Samtools. Generated if ```-r READS_FOLDER```is specified
 - eggnog_annotations folder
-     contains eggNOG-mapper results. Generated if ```-A EGGNOG_ANNOTATION, --eggnog_annotation EGGNOG_ANNOTATION``` is not specified
+> contains eggNOG-mapper results. Generated if ```-A EGGNOG_ANNOTATION, --eggnog_annotation EGGNOG_ANNOTATION``` is not specified
 - annotation_matrix.csv
-     matrix with the genetic information (KO copy number) per genome, with genomes as rows and KO as columns; input required for prediction of phenotypes. Generated if .csv file is not already provided with ```-A EGGNOG_ANNOTATION, --eggnog_annotation EGGNOG_ANNOTATION```
+> matrix with the genetic information (KO copy number) per genome, with genomes as rows and KO as columns; input required for prediction of phenotypes. Generated if .csv file is not already provided with ```-A EGGNOG_ANNOTATION, --eggnog_annotation EGGNOG_ANNOTATION```
 - KO_for_calculation.csv
-     matrix used to calculate FRED if ```-k, --KO``` parameter is specified, with genomes as rows, KO as columns and 0/1 values to indicate presence/absence 
+> matrix used to calculate FRED if ```-k, --KO``` parameter is specified, with genomes as rows, KO as columns and 0/1 values to indicate presence/absence 
   
 #### output_micropherret folder
 If MCROPHERRET models are used, it stores the results of the ML predictions:
 - predict_functions.csv
-     matrix with predicted functions per genome
+> matrix with predicted functions per genome
 - predict_sum.csv
-     number of genomes predicted to perform each function
+> number of genomes predicted to perform each function
 They are generated only if ```-k, --KO``` and  ```-m MICROPHERRET_PREDICTIONS, --micropherret_predictions MICROPHERRET_PREDICTIONS``` are not specified
   
 #### output_fred folder
@@ -151,16 +151,16 @@ It stores results of FRED calculation procedure:
 - fredc.csv file
 > store results of FREDc calculation for each analysed sample. Additional metrics like alpha diversity (Gini-Simpson index, GSI), a non-normalised version of FREDc(FREDc_tian) and Rao’s entropy for functional diversity are included too.
 - freds.csv
-    store results of FREDs calculation for each function for each analysed sample
+> store results of FREDs calculation for each function for each analysed sample
 - FREDs_statistic.csv
-     FREDs statistics for each analysed function and sample
+> FREDs statistics for each analysed function and sample
 
 Intermediate results are also provided:
 - jaccard_distances.csv
-     storing the pairwise functional diversity within each genome pair
+> storing the pairwise functional diversity within each genome pair
 - used_relative_abundances.csv
-     relative abundances computed by miFRED and used for FRED calculation
+> relative abundances computed by miFRED and used for FRED calculation
 - normalised_relative_abundances.csv
-     relative abundances computed by miFRED, normalised by the number of mapped reads
+> relative abundances computed by miFRED, normalised by the number of mapped reads
 
 FREDc and FREDs distribution plot are provided too to aid the analysis. 
