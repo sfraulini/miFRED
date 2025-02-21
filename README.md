@@ -149,7 +149,7 @@ They are generated only if ```-k, --KO``` and  ```-m MICROPHERRET_PREDICTIONS, -
 #### output_fred folder
 It stores results of FRED calculation procedure:
 - fredc.csv file
-    store results of FREDc calculation for each analysed sample. Additional metrics like alpha diversity (Gini-Simpson index, GSI), a non-normalised version of FREDc(FREDc_tian) and Rao’s entropy for functional diversity are included too.
+> store results of FREDc calculation for each analysed sample. Additional metrics like alpha diversity (Gini-Simpson index, GSI), a non-normalised version of FREDc(FREDc_tian) and Rao’s entropy for functional diversity are included too.
 - freds.csv
     store results of FREDs calculation for each function for each analysed sample
 - FREDs_statistic.csv
