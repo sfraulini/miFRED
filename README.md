@@ -26,6 +26,8 @@ miFRED calculates the following metrics:
 
 Outputs include several files storing the calculated FRED metrics, summary statistics and distribution plots. Intermediate results are also provided, including MICROPHERRET functional predictions, Jaccard distances between organisms and relative abundance values.
 
+![Alt Text](Data/miFREDpipeline.png)
+
 ## **Installation**
 1. Download the miFRED folder from this repository:
    
