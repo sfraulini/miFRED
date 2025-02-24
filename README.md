@@ -39,7 +39,7 @@ Outputs include several files storing the calculated FRED metrics, summary stati
    
      ```git clone https://github.com/BizzoTL/MICROPHERRET/```
   
-4. miFRED requires an apposite conda environment, which can be generated as follow using the miFRED.yml file:
+4. miFRED requires an apposite conda environment, which can be generated as follow using the miFRED_environment.yml file in Data:
 
      ```conda env create -f miFRED_env.yml```
 
