@@ -39,7 +39,8 @@ Outputs include several files storing the calculated FRED metrics, summary stati
    
      ```git clone https://github.com/BizzoTL/MICROPHERRET/```
 
-4. Download MICROPHERRET ML models from the designated MEGA folder linked in [GitHub](https://github.com/BizzoTL/MICROPHERRET/)
+4. Download MICROPHERRET ML models from the designated MEGA folder linked in [BizzoTL/MICROPHERRET/](https://github.com/BizzoTL/MICROPHERRET/)
+   
    Ensure that the saved_models folder is placed inside the MICROPHERRET directory within miFRED/Data/ so that each model follows this path structure: ```miFRED/Data/MICROPHERRET/saved_models/```
   
 5. miFRED requires an apposite conda environment, which can be generated as follow using the miFRED_environment.yml file in Data:
