@@ -38,7 +38,7 @@ def parse_args():
     group_annotations =  parser.add_mutually_exclusive_group(required = True)
     group_annotations.add_argument('-A', '--eggnog_annotation', help = 'Directory where genomes eggNOG .annotations files are stored. .csv file obtained from parsing .annotations files can be directly provided, with genomes as rows, KO as columns and KO counts as values. First column must be named "Genomes')
     group_annotations.add_argument('-db', '--eggnog_database', help = 'Directory where eggNOG-mapper database is stored')
-    parser.add_argument('-sm', '--eggnog-sensmode', default = 'sensitive', choices = ['default', 'fast', 'mid-sensitive', 'sensitive', 'more-sensitive', 'very-sensitive','ultra-sensitive'], help = 'eggNOG-mapper Diamond search option: either default, fast, mid-sensitive, sensitive, more-sensitive, very-sensitive or ultra-sensitive. (default: sensitive)')
+    parser.add_argument('-sm', '--eggnog_sensmode', default = 'sensitive', choices = ['default', 'fast', 'mid-sensitive', 'sensitive', 'more-sensitive', 'very-sensitive','ultra-sensitive'], help = 'eggNOG-mapper Diamond search option: either default, fast, mid-sensitive, sensitive, more-sensitive, very-sensitive or ultra-sensitive. (default: sensitive)')
     parser.add_argument('-f', '--functions_list', help = '.txt file containing MICROPHERRET functions to be considered for the calculation, one per line. (default: 86 functions whose models were accurate on test set, stored in functions.txt)')
     parser.add_argument('-s', '--training_sets', default = 'training_sets', help = 'Folder containing the dataset.csv and dataset_acetoclastic_methanogenesis.csv files to be used in the training. (default: ./training_sets/ )')
     parser.add_argument('-c', '--covered_genome_fraction', default= 0.1, help = 'Genomes with a fraction of covered bases lower than this are reported as having zero coverage. (default: 0.10)')
@@ -527,7 +527,7 @@ if __name__ == '__main__':
         annotation_folder = args.eggnog_annotation
     else:
         print('Annotation with eggNOG-mapper...')
-        subprocess.check_call(['./pipeline_eggnog.sh', genomes_folder, output_folder, genomes_extension, str(args.processors), args.eggnog_database]) 
+        subprocess.check_call(['./pipeline_eggnog.sh', genomes_folder, output_folder, genomes_extension, str(args.processors), args.eggnog_database, args.eggnog_sensmode]) 
         annotation_folder = os.path.join(output_folder, 'input_fred/eggnog_annotations')
         print('Done')
     
