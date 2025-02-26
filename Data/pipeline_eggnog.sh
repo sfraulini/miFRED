@@ -13,6 +13,7 @@ output_dir="$2"
 extension_genomes="$3"
 proc="$4"
 database="$5"
+sensmode="$6"
 
 dir=$(pwd)
 
@@ -43,7 +44,7 @@ cd $input_genomes/
 for f in $(ls *); do 
     echo "Annotating $f..."
     name=${f%$extension_genomes*}
-    emapper.py -m diamond --itype genome --genepred prodigal  --cpu $proc -i $f -o $name --output_dir $output_dir/input_fred/eggnog_annotations --data_dir $database --override >> "$output_dir/logs/eggnog_mapper.log" 2>&1
+    emapper.py -m diamond --itype genome --genepred prodigal  --cpu $proc -i $f -o $name --output_dir $output_dir/input_fred/eggnog_annotations --sensmode $sensmode --data_dir $database --override 
 done
 
 rm -r $input_genomes/emappertmp_*
