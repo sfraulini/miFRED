@@ -47,6 +47,8 @@ Outputs include several files storing the calculated FRED metrics, summary stati
 
      ```conda env create -f miFRED_env.yml```
 
+6. Make scripts executable using ```chmod +x script_name```
+
 ## **Requirements**
 miFRED requires a Linux system and at least 6 CPUs due to the computational demands of the MICROPHERRET training process.
 
