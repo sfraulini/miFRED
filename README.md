@@ -169,3 +169,5 @@ Intermediate results are also provided:
 > relative abundances computed by miFRED, normalised by the number of mapped reads
 
 FREDc and FREDs distribution plot are provided too to aid the analysis. 
+
+Examples of miFRED input and output files are available here: [Examples](https://mega.nz/folder/zAJ01BLA#R94ItGZ8_L25P65fMBcalQ)
