@@ -173,3 +173,6 @@ Intermediate results are also provided:
 FREDc and FREDs distribution plot are provided too to aid the analysis. 
 
 Examples of miFRED input and output files are available here: [Examples](https://mega.nz/folder/2JYhwCYJ#R94ItGZ8_L25P65fMBcalQ)
+
+## **Citation**
+DOI: 10.5281/zenodo.15002451
