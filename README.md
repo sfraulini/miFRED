@@ -26,6 +26,8 @@ miFRED calculates the following metrics:
 
 Outputs include several files storing the calculated FRED metrics, summary statistics and distribution plots. Intermediate results are also provided, including MICROPHERRET functional predictions, Jaccard distances between organisms and relative abundance values.
 
+For information on miFRED installation, requirements and usage check out the [Wiki page](https://github.com/sfraulini/miFRED.wiki.git)!
+
 ![Alt Text](Data/miFREDpipeline.png)
 
 ## **Usage**
@@ -43,7 +45,7 @@ Below are different command examples depending on the inputs provided by the use
 
    ```python3 miFRED_core.py -g GENOMES_FOLDER -B BAM_FILES -A eggnog_annotation -o output_folder --KO```
 
-- For help type the following or look at the Manual:
+- For help type the following or look at the [Wiki](https://github.com/sfraulini/miFRED.wiki.git):
 
    ```python3 miFRED_core.py --help```
 
