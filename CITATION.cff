@@ -1,0 +1,29 @@
+message: "If you use this software, please cite it as below."
+abstract: <p>Microbial phenotype-based functional redundancy calculator from metagenomics
+  data</p>
+authors:
+- affiliation: University of Padova, Department of Biology
+  family-names: Fraulini
+  given-names: Sofia
+  orcid: 0009-0004-2407-8643
+- affiliation: University of Padova, Department of Biology
+  family-names: Sanguineti
+  given-names: Davide
+  orcid: 0009-0002-0152-4570
+- affiliation: University of Padova, Department of Biology
+  family-names: Zampieri
+  given-names: Guido
+  orcid: 0000-0002-4518-5913
+cff-version: 1.2.0
+date-released: '2025-03-10'
+doi: 10.5281/zenodo.15002451
+identifiers:
+- type: swh
+  value: swh:1:dir:ac8ddbe76dcf98fdb34364b39d50590fa4a4c8c4;origin=https://doi.org/10.5281/zenodo.15002450;visit=swh:1:snp:8a8a744d1896c309242220914f64c3fcbaf4016a;anchor=swh:1:rel:f3d5b2acf1a727fb6b0dc129afddcd3f50b1f7f2;path=sfraulini-miFRED-c0d3817
+license:
+- agpl-3.0-only
+repository-code: https://github.com/sfraulini/miFRED/tree/v1.0.0
+title: miFRED v1.0.0 source code
+type: software
+version: v1.0.0
+
